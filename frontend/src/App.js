@@ -2,11 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Employee from './components/Employee';
+import Employee from "./components/Employee/Employee";
 import Welcome from "./components/Welcome"; 
-import CreateEmployee from "./components/CreateEmployee";
-import EditEmployee from "./components/EditEmployee";
-import EmployeeDetails from "./components/EmployeeDetails";
+import CreateEmployee from "./components/Employee/CreateEmployee";
+import EditEmployee from "./components/Employee/EditEmployee";
+import EmployeeDetails from "./components/Employee/EmployeeDetails";
 
 const App = () => {
   return (

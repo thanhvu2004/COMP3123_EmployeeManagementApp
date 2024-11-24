@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, useParams } from "react-router-dom";
-import NavigationBar from "./Navbar";
+import NavigationBar from "../Navbar";
 import { Container, Form, Button } from "react-bootstrap";
 
 const EditEmployee = () => {

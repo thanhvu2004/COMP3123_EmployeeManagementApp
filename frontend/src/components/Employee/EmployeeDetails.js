@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import NavigationBar from "./Navbar";
+import NavigationBar from "../Navbar";
 import { Container, Card, Button } from "react-bootstrap";
 
 const EmployeeDetails = () => {

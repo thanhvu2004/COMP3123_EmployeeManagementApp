@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
-import NavigationBar from "./Navbar";
-import { Container, Button, Table } from "react-bootstrap";
+import NavigationBar from "../Navbar";
+import { Container, Button, Table, Form } from "react-bootstrap";
 
 const Employee = () => {
   const [employees, setEmployees] = useState([]);
+  const [department, setDepartment] = useState("");
+  const [position, setPosition] = useState("");
 
-  useEffect(() => {
-    fetch("http://localhost:5000/api/v1/emp/employees", {
+  const fetchEmployees = (query = "") => {
+    fetch(`http://localhost:5000/api/v1/emp/employees${query}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -25,7 +27,20 @@ const Employee = () => {
       .catch((error) => {
         console.error("Fetch error:", error);
       });
+  };
+
+  useEffect(() => {
+    fetchEmployees();
   }, []);
+
+  const handleSearch = (e) => {
+    e.preventDefault();
+    const query = [];
+    if (department) query.push(`department=${encodeURIComponent(department)}`);
+    if (position) query.push(`position=${encodeURIComponent(position)}`);
+    console.log("Query string:", query.join("&"));
+    fetchEmployees(`?${query.join("&")}`);
+  };
 
   const handleDelete = (employeeId) => {
     fetch(`http://localhost:5000/api/v1/emp/employees?eid=${employeeId}`, {
@@ -70,6 +85,29 @@ const Employee = () => {
             >
               Add Employee
             </Button>
+            <Form onSubmit={handleSearch} className="mb-3">
+              <Form.Group controlId="formDepartment">
+                <Form.Label>Department</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter department"
+                  value={department}
+                  onChange={(e) => setDepartment(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formPosition" className="mt-3">
+                <Form.Label>Position</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Enter position"
+                  value={position}
+                  onChange={(e) => setPosition(e.target.value)}
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" className="mt-3">
+                Search
+              </Button>
+            </Form>
             <Table striped bordered hover>
               <thead>
                 <tr>

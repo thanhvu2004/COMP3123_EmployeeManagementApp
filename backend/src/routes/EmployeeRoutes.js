@@ -6,11 +6,16 @@ const router = express.Router();
 
 // GET /api/v1/emp/employees
 router.get("/employees", async (req, res) => {
+  const { department, position } = req.query;
+  const query = {};
+  if (department) query.department = department;
+  if (position) query.position = position;
+
   try {
-    const employees = await Employee.find();
+    const employees = await Employee.find(query);
     res.status(200).json(employees);
   } catch (err) {
-    res.status(500).json({ status: false, message: "Server error" });
+    res.status(500).json({ status: false, message: err.message });
   }
 });
 
@@ -116,6 +121,5 @@ router.delete('/employees', async (req, res) => {
         res.status(500).json({ status: false, message: "Server error" });
     }
 });
-
 
 module.exports = router;
