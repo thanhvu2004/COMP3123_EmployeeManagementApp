@@ -26,6 +26,7 @@ function NavigationBar() {
                   href="/"
                   onClick={() => {
                     localStorage.removeItem("token");
+                    window.location.href = "/login";
                   }}
                 >
                   Logout
