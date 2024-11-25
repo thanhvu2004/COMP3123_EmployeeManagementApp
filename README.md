@@ -15,7 +15,7 @@ This project is an Employee Management Application built with React for the fron
 ## Screenshots
 
 ### Docker Container Set Up
-![Docker Container(./screenshot/Docker-Container.png)]
+![Docker Container Set Up](./screenshot/Docker-Container.png)
 
 ### Postman Test User Sign Up
 ![PM Test User Sign Up](./screenshot/PM-user-signup.png)
@@ -57,26 +57,24 @@ This project is an Employee Management Application built with React for the fron
 ![Employee List](./screenshot/Employee-management-page.png)
 
 ### Create Employee
-![Create Employee](./screenshot/create-employee.png)
+![Create Employee](./screenshot/Create-Employee.png)
 
 ### Result After Create Employee
 ![Result After Create Employee](./screenshot/Result.png)
 
 ### Edit Employee
-![Edit Employee](./screenshot/edit-employee.png)
+![Edit Employee](./screenshot/Edit-Employee.png)
 
 ### Result After Edit Employee
 ![Result After Edit Employee](./screenshot/Result2.png)
 
 ### Employee Details
-![Employee Details](./screenshot/view-employee-details.png)
+![Employee Details](./screenshot/View-Employee-Details.png)
 
 ### Search Function
 ![Search By Department](./screenshot/Search1.png)
 ![Search By Position](./screenshot/Search2.png)
 ![Search By Position But No Match](./screenshot/Search3.png)
-
-## Installation
 
 ## Usage
 
