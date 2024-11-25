@@ -15,7 +15,7 @@ This project is an Employee Management Application built with React for the fron
 ## Screenshots
 
 ### Docker Container Set Up
-![Docker Container(./screenshot.Docker-Container.png)]
+![Docker Container(./screenshot/Docker-Container.png)]
 
 ### Postman Test User Sign Up
 ![PM Test User Sign Up](./screenshot/PM-user-signup.png)
